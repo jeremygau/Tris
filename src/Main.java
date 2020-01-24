@@ -10,7 +10,7 @@ public class Main {
         List<Integer> suite = new ArrayList<>(size);
         Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            suite.add(i, rand.nextInt(100));
+            suite.add(i, rand.nextInt(50));
         }
 
 //        BubbleSort<Integer> bubble = new BubbleSort<>(suite);
