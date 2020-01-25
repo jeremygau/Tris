@@ -13,12 +13,9 @@ public class FusionSort<E extends Comparable<E>> {
         if (s.size() > 1) {
             List<E> s1 = subList(s, 0, s.size() / 2);
             List<E> s2 = subList(s, s.size() / 2, s.size());
-//            System.out.println("s1 = " + s1);
-//            System.out.println("s2 = " + s2);
-            s1 = sort(s1);
-            s2 = sort(s2);
-            fusion(s1, s2);
-//            System.out.println("s = " + s);
+            List<E> s3 = sort(s1);
+            List<E> s4 = sort(s2);
+            s = fusion(s3, s4);
         }
         return s;
     }
@@ -47,7 +44,6 @@ public class FusionSort<E extends Comparable<E>> {
             a.remove(0);
         }
         s.addAll(fusion(a, b));
-        System.out.println("s " + s);
         return s;
     }
 
