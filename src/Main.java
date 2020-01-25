@@ -23,16 +23,13 @@ public class Main {
 
         System.out.println(suite);
 
-//        BubbleSort<Integer> bubble = new BubbleSort<>(suite);
-//        bubble.sort();
-//        System.out.println(suite);
+        BubbleSort<Integer> bubble = new BubbleSort<>();
+        System.out.println(bubble.sort(suite));
 
-//        FusionSort<Integer> fusion = new FusionSort<>();
-//        suite = fusion.sort(suite);
-//        System.out.println(suite);
+        FusionSort<Integer> fusion = new FusionSort<>();
+        System.out.println(fusion.sort(suite));
 
         QuickSort<Integer> quickSort = new QuickSort<>();
-        quickSort.quicksort(suite, 0, suite.size()-1);
-        System.out.println(suite);
+        System.out.println(quickSort.sort(suite));
     }
 }

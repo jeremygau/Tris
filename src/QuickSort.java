@@ -1,14 +1,18 @@
 import java.util.List;
-import java.util.Random;
 
-public class QuickSort<E extends Comparable<E>> {
+public class QuickSort<E extends Comparable<E>> extends Sort<E>{
 
-    public void quicksort(List<E> suite, int start, int end) {
+    public List<E> sort(List<E> suite) {
+        return sortAux(suite, 0, suite.size()-1);
+    }
+
+    public List<E> sortAux(List<E> suite, int start, int end) {
         if (start < end) {
             int pivot = partition(suite, start, end);
-            quicksort(suite, start, pivot-1);
-            quicksort(suite, pivot+1, end);
+            sortAux(suite, start, pivot-1);
+            sortAux(suite, pivot+1, end);
         }
+        return suite;
     }
 
     public int partition (List<E> suite, int start, int end) {
@@ -24,12 +28,6 @@ public class QuickSort<E extends Comparable<E>> {
         suite.set(start, suite.get(d));
         suite.set(d, pivot);
         return d;
-    }
-
-    public void swap(List<E> suite, int j, int j2) {
-        E tmp = suite.get(j);
-        suite.set(j, suite.get(j2));
-        suite.set(j2, tmp);
     }
 
 }
