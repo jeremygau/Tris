@@ -36,12 +36,10 @@ public class FusionSort<E extends Comparable<E>> {
             return a;
         }
         List<E> s = new ArrayList<>();
-        if (a.get(0).compareTo(b.get(0)) >= 0) {
-            s.add(b.get(0));
-            b.remove(0);
+        if (a.get(0).compareTo(b.get(0)) > 0) {
+            s.add(b.remove(0));
         } else {
-            s.add(a.get(0));
-            a.remove(0);
+            s.add(a.remove(0));
         }
         s.addAll(fusion(a, b));
         return s;
