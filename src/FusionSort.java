@@ -3,12 +3,6 @@ import java.util.List;
 
 public class FusionSort<E extends Comparable<E>> {
 
-    private List<E> suite;
-
-    public FusionSort(List<E> suite) {
-        this.suite = suite;
-    }
-
     public List<E> sort(List<E> s) {
         if (s.size() > 1) {
             List<E> s1 = sort(subList(s, 0, s.size() / 2));
@@ -41,9 +35,5 @@ public class FusionSort<E extends Comparable<E>> {
         }
         s.addAll(fusion(a, b));
         return s;
-    }
-
-    public List<E> getSuite() {
-        return suite;
     }
 }
