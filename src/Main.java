@@ -19,6 +19,7 @@ public class Main {
         sorts.add(new BubbleSort<>());
         sorts.add(new FusionSort<>());
         sorts.add(new QuickSort<>());
+        sorts.add(new PileSort<>());
 
         for (Sort<Integer> sort : sorts) {
             System.out.println(sort.getClass().getName());
