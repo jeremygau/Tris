@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class BubbleSort<E extends Comparable<E>> extends Sort<E> {
+public class BubbleSort<E extends Comparable<E>> extends SwapSort<E> {
 
     public List<E> sort(List<E> suite) {
         for (int i = suite.size(); i > 2; i--) {

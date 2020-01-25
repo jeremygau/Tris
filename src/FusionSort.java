@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FusionSort<E extends Comparable<E>> {
+public class FusionSort<E extends Comparable<E>> implements Sort<E> {
 
     public List<E> sort(List<E> s) {
         if (s.size() > 1) {
