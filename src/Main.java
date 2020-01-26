@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int size = 3126;
+        int size = 1000; //max pour fusionSOrt 3126
+        System.out.println("Taille de la liste : " + size + "\n");
         List<Integer> suite0 = new ArrayList<>(size);
         List<Integer> suite1 = new ArrayList<>(size);
         List<Integer> suite2 = new ArrayList<>(size);
@@ -12,14 +13,14 @@ public class Main {
 
         Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            int r = rand.nextInt(100000);
+            int r = rand.nextInt(10000000);
             suite0.add(i, r);
             suite1.add(i, r);
             suite2.add(i, r);
             suite3.add(i, r);
         }
 
-        System.out.println(suite0);
+//        System.out.println(suite0);
 
         Map<Sort<Integer>, List<Integer>> sorts = new HashMap<>();
         sorts.put(new BubbleSort<>(), suite0);
@@ -31,7 +32,8 @@ public class Main {
             System.out.println(sort.getClass().getName());
             System.out.println("suite non triée \t" + sorts.get(sort));
             long startTime = System.currentTimeMillis();
-            System.out.println("suite triée \t \t" + sort.sort(sorts.get(sort)));
+//            sort.sort(sorts.get(sort)); // tri sans affichage
+            System.out.println("suite triée \t \t" + sort.sort(sorts.get(sort)));// tri avec affichage
             System.out.println("temps d'execution = " + (System.currentTimeMillis() - startTime) + " ms\n");
         }
     }

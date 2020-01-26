@@ -23,7 +23,7 @@ public class PileSort<E extends Comparable<E>> extends SwapSort<E> implements So
     }
 
     public List<E> sort(List<E> suite){
-        for (int i = suite.size() >> 1; i >= 0; i--)
+        for (int i = suite.size()/2; i >= 0; i--)
             tamiser(suite, i, suite.size() - 1);
 
         for (int i = suite.size() - 1; i >= 1; i--)
