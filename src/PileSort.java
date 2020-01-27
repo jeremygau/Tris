@@ -17,7 +17,6 @@ public class PileSort<E extends Comparable<E>> extends SwapSort<E> implements So
             }
             else
                 break;
-            System.out.println("tamiser" + arbre);
         }
     }
 
@@ -28,7 +27,6 @@ public class PileSort<E extends Comparable<E>> extends SwapSort<E> implements So
         for (int i = suite.size() - 1; i >= 1; i--)
         {
             swap(suite, i, 0);
-            System.out.println("swap" + suite);
             tamiser(suite, 0, i - 1);
         }
         return suite;
