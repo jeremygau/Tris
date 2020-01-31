@@ -3,12 +3,20 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+//        List<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(27);
+//        list.add(3);
+//        list.add(1);
+//        list.add(3);
+//        CountingSort<Integer> countingSort = new CountingSort<>(list);
+//        System.out.println(countingSort.sort());
 
-        System.out.println((char) 97);
 
-        int size = 300;//max pour fusionSort 3126
-//        Solver<Character> solver = new Solver<>(size, "char");
-//        solver.solve();
+
+        int size = 5_000_000;//max pour fusionSort 3126
+        Solver<Integer> solver = new Solver<>(size, "int");
+        solver.solve();
 
 //        System.out.println("Taille de la liste : " + size + "\n");
 //        List<Integer> suite0 = new ArrayList<>(size);

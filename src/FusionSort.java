@@ -29,20 +29,34 @@ public class FusionSort<E extends Comparable<E>> extends Sort<E> {
         return subList;
     }
 
+//    public List<E> fusion (List<E> a, List<E> b) {
+//        if (a.isEmpty()) {
+//            return b;
+//        }
+//        if (b.isEmpty()) {
+//            return a;
+//        }
+//        List<E> s = new ArrayList<>();
+//        if (a.get(0).compareTo(b.get(0)) > 0) {
+//            s.add(b.remove(0));
+//        } else {
+//            s.add(a.remove(0));
+//        }
+//        s.addAll(fusion(a, b));
+//        return s;
+//    }
+
     public List<E> fusion (List<E> a, List<E> b) {
-        if (a.isEmpty()) {
-            return b;
+        List<E> exit = new ArrayList<>();
+        while (!a.isEmpty() && !b.isEmpty()) {
+            if (a.get(0).compareTo(b.get(0)) > 0) {
+                exit.add(b.remove(0));
+            } else {
+                exit.add(a.remove(0));
+            }
         }
-        if (b.isEmpty()) {
-            return a;
-        }
-        List<E> s = new ArrayList<>();
-        if (a.get(0).compareTo(b.get(0)) > 0) {
-            s.add(b.remove(0));
-        } else {
-            s.add(a.remove(0));
-        }
-        s.addAll(fusion(a, b));
-        return s;
+        exit.addAll(a);
+        exit.addAll(b);
+        return exit;
     }
 }

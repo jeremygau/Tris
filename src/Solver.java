@@ -24,7 +24,7 @@ public class Solver<E extends Comparable<E>> {
     public void fillListChar() {
         Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            Character r = (char) (rand.nextInt(122 + 97) + 97);
+            Character r = (char) (rand.nextInt(26) + 97);
             myList.add(i, (E) r);
         }
     }
@@ -33,9 +33,9 @@ public class Solver<E extends Comparable<E>> {
         Random rand = new Random();
         StringBuilder string = new StringBuilder();
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j < rand.nextInt(5); j++) {
-                Character r = (char) (rand.nextInt(122 + 97) - 97);
-                string.append(string.toString()).append(r);
+            for (int j = 0; j < rand.nextInt(5) + 1; j++) {
+                Character r = (char) (rand.nextInt(26) + 97);
+                string.append(r);
             }
             myList.add(i, (E) string.toString());
             string = new StringBuilder();
@@ -54,16 +54,17 @@ public class Solver<E extends Comparable<E>> {
         }
         System.out.println("Taille de la liste : " + myList.size() + "\n");
         System.out.println("Suite à trier : " + myList + "\n");
-        sorts.add(new BubbleSort<>(myList));
+//        sorts.add(new BubbleSort<>(myList));
         sorts.add(new FusionSort<>(myList));
         sorts.add(new QuickSort<>(myList));
         sorts.add(new PileSort<>(myList));
         sorts.add(new HeapSort<>(myList));
         for (Sort<E> sort : sorts) {
             System.out.println(sort.getClass().getName());
-            System.out.println("suite non triée : " + sort.getSuite());
+//            System.out.println("suite non triée : " + sort.getSuite());
             long startTime = System.currentTimeMillis();
-            System.out.println("suite triée \t \t" + sort.sort());// tri avec affichage
+//            System.out.println("suite triée \t \t" + sort.sort());// tri avec affichage
+            sort.sort();//tri sans affichage
             System.out.println("temps d'execution = " + (System.currentTimeMillis() - startTime) + " ms\n");
         }
     }
