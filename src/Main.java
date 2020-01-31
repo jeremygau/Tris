@@ -4,9 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int size = 150; //max pour fusionSort 3126
-        Solver<Integer> solver = new Solver<>(size);
-        solver.solve();
+        System.out.println((char) 97);
+
+        int size = 300;//max pour fusionSort 3126
+//        Solver<Character> solver = new Solver<>(size, "char");
+//        solver.solve();
 
 //        System.out.println("Taille de la liste : " + size + "\n");
 //        List<Integer> suite0 = new ArrayList<>(size);

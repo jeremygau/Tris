@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FusionSort<E extends Comparable<E>> implements Sort<E> {
+public class FusionSort<E extends Comparable<E>> extends Sort<E> {
 
-    List<E> suite;
 
     public FusionSort(List<E> suite) {
-        this.suite = suite;
+        super(suite);
     }
 
     public List<E> sort() {

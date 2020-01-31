@@ -1,12 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class HeapSort<E extends Comparable<E>> extends SwapSort<E> implements Sort<E> {
-
-    List<E> suite;
+public class HeapSort<E extends Comparable<E>> extends Sort<E>{
 
     public HeapSort(List<E> suite) {
-        this.suite = suite;
+        super(suite);
     }
 
     @Override

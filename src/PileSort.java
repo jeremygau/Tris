@@ -1,11 +1,9 @@
 import java.util.List;
 
-public class PileSort<E extends Comparable<E>> extends SwapSort<E> implements Sort<E> {
-
-    List<E> suite;
+public class PileSort<E extends Comparable<E>> extends Sort<E> {
 
     public PileSort(List<E> suite) {
-        this.suite = suite;
+        super(suite);
     }
 
     private void tamiser(List<E> arbre, int noeud, int n) {

@@ -1,11 +1,9 @@
 import java.util.List;
 
-public class QuickSort<E extends Comparable<E>> extends SwapSort<E> {
-
-    List<E> suite;
+public class QuickSort<E extends Comparable<E>> extends Sort<E> {
 
     public QuickSort(List<E> suite) {
-        this.suite = suite;
+        super(suite);
     }
 
     public List<E> sort() {
