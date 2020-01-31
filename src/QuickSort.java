@@ -2,8 +2,14 @@ import java.util.List;
 
 public class QuickSort<E extends Comparable<E>> extends SwapSort<E> {
 
-    public List<E> sort(List<E> suite) {
-        return sortAux(suite, 0, suite.size()-1);
+    List<E> suite;
+
+    public QuickSort(List<E> suite) {
+        this.suite = suite;
+    }
+
+    public List<E> sort() {
+        return sortAux(this.suite, 0, suite.size()-1);
     }
 
     public List<E> sortAux(List<E> suite, int start, int end) {

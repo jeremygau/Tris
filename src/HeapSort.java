@@ -3,39 +3,40 @@ import java.util.List;
 
 public class HeapSort<E extends Comparable<E>> extends SwapSort<E> implements Sort<E> {
 
+    List<E> suite;
+
+    public HeapSort(List<E> suite) {
+        this.suite = suite;
+    }
+
     @Override
-    public List<E> sort(List<E> s) {
-        List<E> heap = new ArrayList<>(s.size());
-        for (E element : s) {
+    public List<E> sort() {
+        List<E> heap = new ArrayList<>(suite.size());
+        for (E element : suite) {
             add(heap, element);
         }
 //        System.out.println(heap);
-        s.clear();
+        suite.clear();
         int i = heap.size()-1;
         while (i >=0) {
             swap(heap, i, 0);
 //            System.out.println("avant : " + heap);
-            s.add(heap.remove(i));
+            suite.add(heap.remove(i));
             tamiser(heap);
 //            System.out.println("heap :  " + heap);
             i--;
         }
-        return s;
+        return suite;
     }
+
 
     public void tamiser(List<E> suite) {
         int index = 0;
         while (index != suite.size() && suite.get(index).compareTo(suite.get(getMinChild(suite, index))) > 0) {
-//            System.out.println("tami : " + suite);
             int temp = index;
             index = getMinChild(suite, temp);
             swap(suite, getMinChild(suite, temp), temp);
-//            System.out.println(suite);
-//            System.out.println("index" + index);
             int a = getMinChild(suite, index);
-//            System.out.println("a " + a + " : "+ suite.get(a));
-//            System.out.println("suite.get(index) = " + suite.get(index));
-//            System.out.println((suite.get(index).compareTo(suite.get(getMinChild(suite, index))) > 0));
         }
     }
 

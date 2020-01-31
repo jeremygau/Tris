@@ -3,10 +3,20 @@ import java.util.List;
 
 public class FusionSort<E extends Comparable<E>> implements Sort<E> {
 
-    public List<E> sort(List<E> s) {
+    List<E> suite;
+
+    public FusionSort(List<E> suite) {
+        this.suite = suite;
+    }
+
+    public List<E> sort() {
+        return sortAux(this.suite);
+    }
+
+    public List<E> sortAux(List<E> s) {
         if (s.size() > 1) {
-            List<E> s1 = sort(subList(s, 0, s.size() / 2));
-            List<E> s2 = sort(subList(s, s.size() / 2, s.size()));
+            List<E> s1 = sortAux(subList(s, 0, s.size() / 2));
+            List<E> s2 = sortAux(subList(s, s.size() / 2, s.size()));
             s = fusion(s1, s2);
         }
         return s;
