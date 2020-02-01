@@ -9,42 +9,49 @@
 //        super(suite);
 //    }
 //
+//
 //    @Override
 //    public List<E> sort() {
-//        return sortAux(this.suite, 9);
+//        return sortAux(this.suite);
 //    }
 //
-//    public List<E> sortAux(List<Integer> suite, int borne) {
-//        List<Integer> comptage = new ArrayList<>(borne + 1);
-//        int suiteSize = suite.size() - 1;
-//        int x = 0;
-//
-//        for (int i = 0; i < borne; i++) {
-//            comptage.add(i, 0);
-//        }
-//
-//        for (int i = 0; i < suiteSize; i++) {
-//            comptage.set(suite.get(i), suite.get(i) + 1);
-//        }
-//
-//        for (int i = 0; i < borne; i++) {
-//            for (int j = 0; j < comptage.get(i) - 1; j++) {
-//                suite.
-//            }
-//        }
-//    }
-//
-////    public Map<E, Integer> counting(List<E> list, int base) {
-////        Map<E, Integer> nb = new HashMap<>();
+////    public List<E> sortAux(List<Integer> suite, int borne) {
+////        List<E> R = new ArrayList<>();
+////        List<Integer> comptage = new ArrayList<>();
+////        List<Integer> pos = new ArrayList<>();
 ////
-////        for (E element : list) {
-////            if (nb.containsKey(element)) {
-////                nb.put(element, 1);
-////            }
-////            else {
+////        int suiteSize = suite.size();
+////        int x = 0;
 ////
-////            }
+////        for (int i = 0; i < borne; i++) {
+////            comptage.add(i, 0);
 ////        }
+////
+////        for (int i = 1; i < suiteSize; i++) {
+////            comptage.set(suite.get(i), comptage.get(suite.get(i)) + 1);
+////        }
+////        pos.add(0);
+////        for (int i = 1; i < borne; i++) {
+////            pos.set(i, pos.get(i - 1) + comptage.get(i - 1));
+////        }
+////        for (int i = 1; i < suiteSize; i++) {
+////            R.set(pos.get(suite.get(i)), suite.get(i));
+////            pos.set(suite.get(i), pos.get(suite.get(i) + 1));
+////        }
+////        return R;
 ////    }
 //
+//    public Map<E, Integer> counting(List<E> list) {
+//        Map<E, Integer> nb = new HashMap<>();
+//
+//        for (E element : list) {
+//            if (!nb.containsKey(element)) {
+//                nb.put(element, 1);
+//            } else {
+//                nb.replace(element, nb.get(element) + 1);
+//            }
+//        }
+//
+//        return nb;
+//    }
 //}
