@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FusionSort<E extends Comparable<E>> extends Sort<E> {
+public class MergeSort<E extends Comparable<E>> extends Sort<E> {
 
 
-    public FusionSort(List<E> suite) {
+    public MergeSort(List<E> suite) {
         super(suite);
     }
 
@@ -47,16 +47,16 @@ public class FusionSort<E extends Comparable<E>> extends Sort<E> {
 //    }
 
     public List<E> fusion (List<E> a, List<E> b) {
-        List<E> exit = new ArrayList<>();
+        List<E> fusionList = new ArrayList<>();
         while (!a.isEmpty() && !b.isEmpty()) {
             if (a.get(0).compareTo(b.get(0)) > 0) {
-                exit.add(b.remove(0));
+                fusionList.add(b.remove(0));
             } else {
-                exit.add(a.remove(0));
+                fusionList.add(a.remove(0));
             }
         }
-        exit.addAll(a);
-        exit.addAll(b);
-        return exit;
+        fusionList.addAll(a);
+        fusionList.addAll(b);
+        return fusionList;
     }
 }

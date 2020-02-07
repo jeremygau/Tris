@@ -13,8 +13,8 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
     public List<E> sortAux(List<E> suite, int start, int end) {
         if (start < end) {
             int pivot = partition(suite, start, end);
-            sortAux(suite, start, pivot-1);
-            sortAux(suite, pivot+1, end);
+            sortAux(suite, start, pivot - 1);
+            sortAux(suite, pivot + 1, end);
         }
         return suite;
     }

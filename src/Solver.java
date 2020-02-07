@@ -54,8 +54,8 @@ public class Solver<E extends Comparable<E>> {
         }
         System.out.println("Taille de la liste : " + myList.size() + "\n");
         System.out.println("Suite à trier : " + myList + "\n");
-//        sorts.add(new BubbleSort<>(myList));
-        sorts.add(new FusionSort<>(myList));
+        sorts.add(new BubbleSort<>(myList));
+        sorts.add(new MergeSort<>(myList));
         sorts.add(new QuickSort<>(myList));
         sorts.add(new PileSort<>(myList));
         sorts.add(new HeapSort<>(myList));
@@ -63,8 +63,8 @@ public class Solver<E extends Comparable<E>> {
             System.out.println(sort.getClass().getName());
 //            System.out.println("suite non triée : " + sort.getSuite());
             long startTime = System.currentTimeMillis();
-//            System.out.println("suite triée \t \t" + sort.sort());// tri avec affichage
-            sort.sort();//tri sans affichage
+            System.out.println("suite triée \t \t" + sort.sort());// tri avec affichage
+//            sort.sort();//tri sans affichage
             System.out.println("temps d'execution = " + (System.currentTimeMillis() - startTime) + " ms\n");
         }
     }

@@ -10,19 +10,16 @@ public class HeapSort<E extends Comparable<E>> extends Sort<E>{
     @Override
     public List<E> sort() {
         List<E> heap = new ArrayList<>(suite.size());
-        for (E element : suite) {
-            add(heap, element);
+        for (E element : suite) { // on ajoute tous les element de la liste
+            add(heap, element);   // dans le tas de facon triée en tas
         }
-//        System.out.println(heap);
-        suite.clear();
-        int i = heap.size()-1;
-        while (i >=0) {
-            swap(heap, i, 0);
-//            System.out.println("avant : " + heap);
-            suite.add(heap.remove(i));
-            tamiser(heap);
-//            System.out.println("heap :  " + heap);
-            i--;
+        suite.clear(); // on vide la liste
+        int lastIndex = heap.size() - 1;
+        while (lastIndex >= 0) {
+            swap(heap, lastIndex, 0); // on echange le dernier du tas avec le premier
+            suite.add(heap.remove(lastIndex)); // on retire le dernier du tas et on le mets dans la liste
+            tamiser(heap); // on tamise le tas
+            lastIndex--; // on diminue l'index du dernier element du tas
         }
         return suite;
     }
@@ -34,7 +31,6 @@ public class HeapSort<E extends Comparable<E>> extends Sort<E>{
             int temp = index;
             index = getMinChild(suite, temp);
             swap(suite, getMinChild(suite, temp), temp);
-            int a = getMinChild(suite, index);
         }
     }
 
@@ -60,22 +56,12 @@ public class HeapSort<E extends Comparable<E>> extends Sort<E>{
         return  (index * 2 + 2 < heap.size());
     }
 
-    public int childrenNumber(List<E> heap, int index) {
-        if (index * 2 + 1 >= heap.size()) {
-            return 0;
-        }
-        if (index * 2 + 2 >= heap.size()) {
-            return 1;
-        }
-        return 2;
-    }
-
     public void add(List<E> heap, E element) {
         heap.add(element);
-        int index = heap.lastIndexOf(element);
-        while (index > 0 && heap.get((index - 1) / 2).compareTo(heap.get(index)) > 0) {
-            swap(heap, (index - 1) / 2, index);
-            index = (index - 1) / 2;
+        int index = heap.size()-1; // on recupere l'index de notre élément
+        while (index > 0 && heap.get((index - 1) / 2).compareTo(heap.get(index)) > 0) { // tant qu'on est pas à la racine et que le pere est superieur au noeud
+            swap(heap, (index - 1) / 2, index); // on echange le pere et le fils
+            index = (index - 1) / 2; // le noeud change d'index
         }
     }
 }
