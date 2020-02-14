@@ -29,28 +29,7 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
             swap(suite, d, f);
         }
         if (suite.get(d).compareTo(pivot) > 0) d--;
-//        suite.set(start, suite.get(d));
-//        suite.set(d, pivot);
         swap(suite, start, d);
         return d;
     }
-
-
-    // A axel
-//
-//    public int partition (List<E> suite, int start, int end) {
-//        E pivot = suite.get(start);
-//        int d = start;
-//        int f = end;
-//        while (d < f) {
-//            while(d < f && suite.get(f).compareTo(pivot) >= 0) f--;
-//            while(d < f && suite.get(d).compareTo(pivot) <= 0) d++;
-//            swap(suite, d, f);
-//        }
-//        if (suite.get(d).compareTo(pivot) > 0) d--;
-//        suite.set(start, suite.get(d));
-//        suite.set(d, pivot);
-//        return d;
-//    }//partition
-
 }

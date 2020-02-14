@@ -11,10 +11,6 @@ public abstract class Sort<E extends Comparable<E>>{
 
     public abstract List<E> sort();
 
-    List<E> getSuite() {
-        return suite;
-    }
-
     public List<E> duplicate(List<E> source) {
         List<E> target = new ArrayList<>(source.size());
         target.addAll(source);
