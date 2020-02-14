@@ -27,7 +27,7 @@ public class Main {
 //        System.out.println(disp(b));
 
         int size = 1000;
-        Solver<String> solver = new Solver<>(size, "string");
+        Solver<Integer> solver = new Solver<>(size, "int");
         solver.solve();
     }
     public static String disp(int[] t) {

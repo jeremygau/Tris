@@ -6,18 +6,18 @@ public class PileSort<E extends Comparable<E>> extends Sort<E> {
         super(suite);
     }
 
-    private void tamiser(List<E> arbre, int noeud, int n) {
-        int k = noeud;
-        int j = 2 * k;
+    private void tamiser(List<E> arbre, int noeud, int size) {
+        int noeudTemp = noeud;
+        int child = 2 * noeudTemp;
 
-        while (j <= n) {
-            if ((j < n) && (arbre.get(j).compareTo(arbre.get(j+1)) < 0))
-                j++;
+        while (child <= size) {
+            if ((child < size) && (arbre.get(child).compareTo(arbre.get(child+1)) < 0))
+                child++;
 
-            if (arbre.get(k).compareTo(arbre.get(j)) < 0){
-                swap(arbre, k, j);
-                k = j;
-                j = 2 * k;
+            if (arbre.get(noeudTemp).compareTo(arbre.get(child)) < 0){
+                swap(arbre, noeudTemp, child);
+                noeudTemp = child;
+                child = 2 * noeudTemp;
             }
             else
                 break;
@@ -28,8 +28,7 @@ public class PileSort<E extends Comparable<E>> extends Sort<E> {
         for (int i = suite.size()/2; i >= 0; i--)
             tamiser(suite, i, suite.size() - 1);
 
-        for (int i = suite.size() - 1; i >= 1; i--)
-        {
+        for (int i = suite.size() - 1; i >= 1; i--) {
             swap(suite, i, 0);
             tamiser(suite, 0, i - 1);
         }
