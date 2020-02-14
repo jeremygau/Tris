@@ -26,7 +26,7 @@ public class Main {
 //        int[] b = denombSort.position(a);
 //        System.out.println(disp(b));
 
-        int size = 1000;
+        int size = 100;
         Solver<Integer> solver = new Solver<>(size, "int");
         solver.solve();
     }
