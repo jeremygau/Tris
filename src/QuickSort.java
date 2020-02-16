@@ -29,9 +29,7 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
             swap(suite, d, f);
         }
         if (suite.get(d).compareTo(pivot) > 0) d--;
-        suite.set(start, suite.get(d));
-        suite.set(d, pivot);
+        swap(suite, start, d);
         return d;
     }
-
 }

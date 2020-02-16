@@ -27,10 +27,10 @@ public class HeapSort<E extends Comparable<E>> extends Sort<E>{
 
     public void tamiser(List<E> suite) {
         int index = 0;
-        while (index != suite.size() && suite.get(index).compareTo(suite.get(getMinChild(suite, index))) > 0) {
-            int temp = index;
-            index = getMinChild(suite, temp);
-            swap(suite, getMinChild(suite, temp), temp);
+        while (index != suite.size() && suite.get(index).compareTo(suite.get(getMinChild(suite, index))) > 0) { // tant qu'on est pas a la fin du tas et que le noeud courant est superieur au plus petit fils
+            int temp = index; // on sauvegarde l'index ou on est
+            index = getMinChild(suite, temp); // l'index devient son plus petit fils
+            swap(suite, getMinChild(suite, temp), temp); // on echange le pere et le fils
         }
     }
 

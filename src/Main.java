@@ -26,8 +26,8 @@ public class Main {
 
     public static String printTAb(int[] t) {
         StringBuilder s = new StringBuilder("[");
-        for (int value : t) {
-            s.append(value).append(",");
+        for (int i = 0; i < t.length; i++) {
+            s.append(t[i]).append(",");
         }
         s.deleteCharAt(s.length()-1);
         s.append("]");

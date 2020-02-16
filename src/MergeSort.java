@@ -29,6 +29,7 @@ public class MergeSort<E extends Comparable<E>> extends Sort<E> {
         return subList;
     }
 
+    // Fusion recursive
 //    public List<E> fusion (List<E> a, List<E> b) {
 //        if (a.isEmpty()) {
 //            return b;
