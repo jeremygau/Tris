@@ -14,6 +14,21 @@ public class CountingSort<E extends Comparable<E>> extends Sort<E> {
         return null;
     }
 
+    // Compte le nombre d'occurences d'un élément de type E dans une liste d'éléments de type E
+    public Map<E, Integer> counting(List<E> list) {
+        Map<E, Integer> nb = new HashMap<>();
+
+        for (E element : list) {
+            if (!nb.containsKey(element)) {
+                nb.put(element, 1);
+            } else {
+                nb.replace(element, nb.get(element) + 1);
+            }
+        }
+
+        return nb;
+    }
+
 //
 //    @Override
 //    public List<E> sort() {
@@ -45,18 +60,4 @@ public class CountingSort<E extends Comparable<E>> extends Sort<E> {
 //        }
 //        return R;
 //    }
-
-    public Map<E, Integer> counting(List<E> list) {
-        Map<E, Integer> nb = new HashMap<>();
-
-        for (E element : list) {
-            if (!nb.containsKey(element)) {
-                nb.put(element, 1);
-            } else {
-                nb.replace(element, nb.get(element) + 1);
-            }
-        }
-
-        return nb;
-    }
 }
